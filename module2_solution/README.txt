@@ -1,0 +1,1 @@
+This project contains a project which is the answer to the week-end assignment from module 2 from the Courser course (SPAinAjs).

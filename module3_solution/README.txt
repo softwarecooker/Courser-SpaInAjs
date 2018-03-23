@@ -1,0 +1,1 @@
+This folder (module3_solution) holds the solution for the assignment 3 of module 3 of the Courser course.

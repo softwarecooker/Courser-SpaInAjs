@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="NarrowItDownApp">
+   <head>
+      <meta charset="utf-8">
+      <title>Narrow It Down App</title>
+   </head>
+   <body>
+      <div ng-controller="NarrowItDownController as ctrl">
+         <input type="text" ng-model="ctrl.searchTerm">
+         <button ng-click="ctrl.getMatchingItems()">Narrow it down for me!</button>
+
+         <div ng-if="ctrl.errorMessage" class="error">{{ctrl.errorMessage}}</div>
+
+         <found-items
+         ng-if="!(ctrl.errorMessage)"
+         found="ctrl.foundItems"
+         arr-empty-msg="{{ctrl.arrEmptyMsg}}"
+         on-remove="ctrl.removeMenuItemFromList(index)"></found-items>
+
+      </div>
+
+      <script src="angular.min.js"></script>
+      <link rel="stylesheet" href="styles.css">
+   </body>
+   <script src="app.js"></script>
+</html>

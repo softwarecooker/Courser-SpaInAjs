@@ -1,0 +1,1 @@
+This folder contains the answer coding for the assignment in the module 4 of the SPAinAJS Courser course.

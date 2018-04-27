@@ -1,0 +1,61 @@
+<form name="signupForm" novalidate style="color: black; margin-left: 10%">
+    <h1>Sign Up</h1>
+    <br>
+    <input type="text" name="firstname" placeholder="First Name"
+     ng-model="signUpCtrl.user.firstName"
+     required
+     minlength="4">
+        <span ng-if="(signupForm.firstname.$error.required || signupForm.firstname.$error.minlength)
+         && signupForm.firstname.$touched" style="color: white">
+            First Name is required. First Name must be at least 4 characters long.
+        </span>
+    <br><br>
+
+    <input type="text" name="lastname" placeholder="Last Name"
+    ng-model="signUpCtrl.user.lastname"
+    required
+    minlength="4">
+        <span ng-if="(signupForm.lastname.$error.required || signupForm.lastname.$error.minlength)
+         && signupForm.lastname.$touched" style="color: white">
+            Last Name is required. Last Name must be at least 4 characters long.
+        </span>
+    <br><br>
+
+    <input type="email" name="email" placeholder="Email"
+    ng-model="signUpCtrl.user.email"
+    required>
+        <span ng-if="signupForm.email.$invalid && signupForm.email.$touched" style="color: white">
+            Email is required. Format must be: handle@domain
+        </span>
+    <br><br>
+
+    <input type="text" name="phone" placeholder="Phone Number ###-###-####" style="width: 235px"
+    ng-model="signUpCtrl.user.phone"
+    pattern="(\d{3})-(\d{3})-(\d{4})">
+        <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched" style="color: white">
+            Phone must be in the format ###-###-####.
+        </span>
+    <br><br>
+
+    <input type="text" name="favdish" placeholder="Favourite Dish (Menu Number)" style="width: 235px"
+    ng-model="signUpCtrl.user.favDishShortName"
+    required>
+        <span ng-if="signupForm.favdish.$error.required && signupForm.favdish.$touched" style="color: white">
+            Pls enter a favourite dish.
+        </span>
+        <span ng-if="signUpCtrl.menuItemNotFound" style="color: white">
+            No such menu number exists. Enter correct number.
+        </span>
+    <br><br>
+
+    <button type="button" name="submit"
+     ng-disabled="signupForm.$invalid"
+     ng-click="signUpCtrl.submitForm()">
+        Submit
+    </button>
+    <br><br>
+
+    <span ng-if="signUpCtrl.infoSaved" style="color: white">
+        Your information has been saved.
+    </span>
+</form>

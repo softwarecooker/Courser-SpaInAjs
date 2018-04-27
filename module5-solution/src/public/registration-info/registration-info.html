@@ -1,0 +1,30 @@
+<div style="margin-left: 10%; color: white">
+
+    <span ng-if="regInfoCtrl.userNotRegistered">Not Signed Up Yet.
+        <a ui-sref="public.signup">Sign up Now!</a></span>
+
+    <div ng-if="!regInfoCtrl.userNotRegistered">
+        <h1>User Details</h1>
+
+        First Name: <b>{{ regInfoCtrl.firstName }}</b>
+        <br><br>
+
+        Last Name: <b>{{ regInfoCtrl.lastname }}</b>
+        <br><br>
+
+        Email: <b>{{ regInfoCtrl.email }}</b>
+        <br><br>
+
+        Phone: <b>{{ regInfoCtrl.phone }}</b>
+        <br><br>
+
+        Favourite Dish: <br>
+        <img ng-src="{{regInfoCtrl.basePath}}/images/{{regInfoCtrl.favDishShortName}}.jpg"
+        alt="Menu Item Image">
+        <br>
+        Title: <b>{{ regInfoCtrl.dishName }}</b>
+        <br>
+        Description: <b>{{ regInfoCtrl.dishDescription }}</b>
+
+    </div>
+</div>
